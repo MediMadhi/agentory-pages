@@ -16,19 +16,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Add scroll effect to header
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.header');
-    if (window.scrollY > 100) {
-        header.style.backgroundColor = 'rgba(102, 126, 234, 0.95)';
-        header.style.backdropFilter = 'blur(10px)';
+    if (window.scrollY > 50) {
+        header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+        header.style.borderBottomColor = '#d0d0d0';
     } else {
-        header.style.backgroundColor = '';
-        header.style.backdropFilter = '';
+        header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+        header.style.borderBottomColor = '#e5e5e5';
     }
 });
 
-// Intersection Observer for fade-in animations
+// Subtle intersection observer for fade-in animations
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.15,
+    rootMargin: '0px 0px -30px 0px'
 };
 
 const observer = new IntersectionObserver(function(entries) {
@@ -46,26 +46,26 @@ document.addEventListener('DOMContentLoaded', function() {
     
     sections.forEach(section => {
         section.style.opacity = '0';
-        section.style.transform = 'translateY(30px)';
-        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        section.style.transform = 'translateY(15px)';
+        section.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
         observer.observe(section);
     });
     
-    // Add fade-in animation to features
+    // Add subtle fade-in animation to features
     const features = document.querySelectorAll('.feature');
     features.forEach((feature, index) => {
         feature.style.opacity = '0';
-        feature.style.transform = 'translateY(20px)';
-        feature.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        feature.style.transform = 'translateY(10px)';
+        feature.style.transition = `opacity 0.3s ease ${index * 0.05}s, transform 0.3s ease ${index * 0.05}s`;
         observer.observe(feature);
     });
     
-    // Add fade-in animation to log entries
+    // Add subtle fade-in animation to log entries
     const logEntries = document.querySelectorAll('.log-entry');
     logEntries.forEach((entry, index) => {
         entry.style.opacity = '0';
-        entry.style.transform = 'translateX(-30px)';
-        entry.style.transition = `opacity 0.6s ease ${index * 0.2}s, transform 0.6s ease ${index * 0.2}s`;
+        entry.style.transform = 'translateY(8px)';
+        entry.style.transition = `opacity 0.3s ease ${index * 0.1}s, transform 0.3s ease ${index * 0.1}s`;
         observer.observe(entry);
     });
 });

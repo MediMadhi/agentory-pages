@@ -6,10 +6,12 @@
 }
 
 body {
-    font-family: 'Noto Sans JP', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f8f9fa;
+    font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.7;
+    color: #1a1a1a;
+    background-color: #fafafa;
+    font-weight: 400;
+    letter-spacing: -0.01em;
 }
 
 .container {
@@ -20,8 +22,9 @@ body {
 
 /* Header Styles */
 .header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid #e5e5e5;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -37,9 +40,10 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: white;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    letter-spacing: -0.02em;
 }
 
 .logo i {
@@ -54,35 +58,42 @@ body {
 }
 
 .nav-links a {
-    color: white;
+    color: #666;
     text-decoration: none;
-    font-weight: 400;
-    transition: opacity 0.3s ease;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
-    opacity: 0.8;
+    color: #1a1a1a;
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 6rem 0;
+    background: #fafafa;
+    color: #1a1a1a;
+    padding: 8rem 0 6rem;
     text-align: center;
 }
 
 .hero-title {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-size: 3.8rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.04em;
+    color: #1a1a1a;
 }
 
 .hero-subtitle {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: #666;
+    font-weight: 400;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
 }
 
 .hero-buttons {
@@ -94,47 +105,52 @@ body {
 
 .btn {
     display: inline-block;
-    padding: 1rem 2rem;
-    border-radius: 50px;
+    padding: 0.85rem 1.8rem;
+    border-radius: 6px;
     text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    font-size: 0.95rem;
+    letter-spacing: -0.01em;
 }
 
 .btn-primary {
-    background: white;
-    color: #667eea;
+    background: #1a1a1a;
+    color: white;
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    background: #333;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .btn-secondary {
     background: transparent;
-    color: white;
-    border-color: white;
+    color: #666;
+    border-color: #e5e5e5;
 }
 
 .btn-secondary:hover {
-    background: white;
-    color: #667eea;
-    transform: translateY(-2px);
+    background: #f5f5f5;
+    color: #1a1a1a;
+    border-color: #d0d0d0;
+    transform: translateY(-1px);
 }
 
 /* Section Styles */
 .section {
-    padding: 4rem 0;
+    padding: 5rem 0;
 }
 
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 3rem;
-    color: #2d3748;
+    font-size: 2.2rem;
+    font-weight: 300;
+    margin-bottom: 4rem;
+    color: #1a1a1a;
+    letter-spacing: -0.03em;
 }
 
 /* App Section */
@@ -152,52 +168,56 @@ body {
 
 .feature {
     background: white;
-    padding: 2rem;
-    border-radius: 15px;
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
     text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease;
+    border: 1px solid #f0f0f0;
+    transition: all 0.2s ease;
 }
 
 .feature:hover {
-    transform: translateY(-5px);
+    transform: translateY(-2px);
+    border-color: #e0e0e0;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
 .feature i {
-    font-size: 3rem;
-    color: #667eea;
-    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
 }
 
 .feature h3 {
-    font-size: 1.3rem;
-    font-weight: 700;
+    font-size: 1.2rem;
+    font-weight: 500;
     margin-bottom: 1rem;
-    color: #2d3748;
+    color: #1a1a1a;
+    letter-spacing: -0.01em;
 }
 
 .feature p {
-    color: #718096;
+    color: #666;
     line-height: 1.6;
+    font-size: 0.95rem;
 }
 
 .app-description {
     background: white;
-    padding: 2.5rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    padding: 3rem;
+    border-radius: 8px;
+    border: 1px solid #f0f0f0;
 }
 
 .app-description p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #4a5568;
-    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 1.5rem;
 }
 
 /* DevLog Section */
 .devlog-section {
-    background: #f7fafc;
+    background: #f9f9f9;
 }
 
 .devlog-content {
@@ -207,11 +227,11 @@ body {
 
 .log-entry {
     background: white;
-    border-radius: 15px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    border-left: 4px solid #667eea;
+    border-radius: 8px;
+    padding: 2.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #f0f0f0;
+    border-left: 3px solid #1a1a1a;
 }
 
 .log-header {
@@ -223,29 +243,32 @@ body {
 }
 
 .log-date {
-    background: #667eea;
-    color: white;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
+    background: #f5f5f5;
+    color: #666;
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid #e5e5e5;
 }
 
 .log-title {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #2d3748;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    letter-spacing: -0.01em;
 }
 
 .log-content p {
     margin-bottom: 1rem;
     line-height: 1.7;
-    color: #4a5568;
+    color: #666;
+    font-size: 0.95rem;
 }
 
 .log-content ul {
     margin-left: 1.5rem;
-    color: #4a5568;
+    color: #666;
 }
 
 .log-content li {
@@ -260,9 +283,9 @@ body {
 
 .profile-card {
     background: white;
-    border-radius: 20px;
-    padding: 3rem;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 4rem 3rem;
+    border: 1px solid #f0f0f0;
     text-align: center;
     max-width: 500px;
     width: 100%;
@@ -273,21 +296,22 @@ body {
 }
 
 .profile-avatar i {
-    font-size: 6rem;
-    color: #667eea;
+    font-size: 4rem;
+    color: #1a1a1a;
 }
 
 .profile-name {
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-size: 1.6rem;
+    font-weight: 500;
     margin-bottom: 0.5rem;
-    color: #2d3748;
+    color: #1a1a1a;
+    letter-spacing: -0.02em;
 }
 
 .profile-role {
-    font-size: 1.1rem;
-    color: #667eea;
-    font-weight: 600;
+    font-size: 1rem;
+    color: #666;
+    font-weight: 400;
     margin-bottom: 1.5rem;
 }
 
@@ -297,8 +321,9 @@ body {
 
 .profile-description p {
     line-height: 1.7;
-    color: #4a5568;
+    color: #666;
     margin-bottom: 0.8rem;
+    font-size: 0.95rem;
 }
 
 .profile-links {
@@ -312,27 +337,31 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.8rem 1.5rem;
-    background: #f7fafc;
-    color: #4a5568;
+    padding: 0.7rem 1.2rem;
+    background: #f9f9f9;
+    color: #666;
     text-decoration: none;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border: 1px solid #f0f0f0;
 }
 
 .profile-link:hover {
-    background: #667eea;
+    background: #1a1a1a;
     color: white;
-    transform: translateY(-2px);
+    border-color: #1a1a1a;
+    transform: translateY(-1px);
 }
 
 /* Footer */
 .footer {
-    background: #2d3748;
-    color: white;
+    background: #1a1a1a;
+    color: #999;
     text-align: center;
-    padding: 2rem 0;
+    padding: 2.5rem 0;
+    font-size: 0.9rem;
 }
 
 /* Responsive Design */
