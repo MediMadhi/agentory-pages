@@ -73,27 +73,27 @@ body {
 .hero {
     background: #fafafa;
     color: #1a1a1a;
-    padding: 8rem 0 6rem;
+    padding: 4rem 0 3rem;
     text-align: center;
 }
 
 .hero-title {
-    font-size: 3.8rem;
-    font-weight: 300;
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.04em;
+    font-size: 3.2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
     color: #1a1a1a;
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
     color: #666;
     font-weight: 400;
-    max-width: 600px;
+    max-width: 500px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .hero-buttons {
@@ -141,37 +141,37 @@ body {
 
 /* Section Styles */
 .section {
-    padding: 5rem 0;
+    padding: 3rem 0;
 }
 
 .section-title {
     text-align: center;
-    font-size: 2.2rem;
-    font-weight: 300;
-    margin-bottom: 4rem;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
     color: #1a1a1a;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
 }
 
 /* App Section */
 .app-content {
     display: grid;
-    gap: 3rem;
-    margin-top: 2rem;
+    gap: 2rem;
+    margin-top: 1rem;
 }
 
 .app-features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
 }
 
 .feature {
     background: white;
-    padding: 2.5rem 2rem;
-    border-radius: 8px;
-    text-align: center;
-    border: 1px solid #f0f0f0;
+    padding: 1.8rem 1.5rem;
+    border-radius: 6px;
+    text-align: left;
+    border: 1px solid #e8e8e8;
     transition: all 0.2s ease;
 }
 
@@ -182,9 +182,10 @@ body {
 }
 
 .feature i {
-    font-size: 2.2rem;
-    color: #1a1a1a;
-    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 0.8rem;
+    display: block;
 }
 
 .feature h3 {
@@ -203,9 +204,9 @@ body {
 
 .app-description {
     background: white;
-    padding: 3rem;
-    border-radius: 8px;
-    border: 1px solid #f0f0f0;
+    padding: 2rem;
+    border-radius: 6px;
+    border: 1px solid #e8e8e8;
 }
 
 .app-description p {
@@ -221,17 +222,17 @@ body {
 }
 
 .devlog-content {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
 .log-entry {
-    background: white;
-    border-radius: 6px;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-    border: 1px solid #f0f0f0;
-    border-left: 2px solid #1a1a1a;
+    background: #f9f9f9;
+    border-radius: 4px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 0.8rem;
+    border: 1px solid #e8e8e8;
+    border-left: 3px solid #666;
 }
 
 .log-entry .log-date {
@@ -267,11 +268,11 @@ body {
 
 .profile-card {
     background: white;
-    border-radius: 8px;
-    padding: 4rem 3rem;
-    border: 1px solid #f0f0f0;
+    border-radius: 6px;
+    padding: 2.5rem 2rem;
+    border: 1px solid #e8e8e8;
     text-align: center;
-    max-width: 500px;
+    max-width: 450px;
     width: 100%;
 }
 
