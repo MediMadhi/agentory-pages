@@ -153,67 +153,72 @@ body {
     letter-spacing: -0.02em;
 }
 
-/* App Section */
-.app-content {
-    display: grid;
-    gap: 2rem;
-    margin-top: 1rem;
+/* Progress Section */
+.progress-content {
+    max-width: 700px;
+    margin: 0 auto;
 }
 
-.app-features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-}
-
-.feature {
-    background: white;
-    padding: 1.8rem 1.5rem;
-    border-radius: 6px;
-    text-align: left;
-    border: 1px solid #e8e8e8;
-    transition: all 0.2s ease;
-}
-
-.feature:hover {
-    transform: translateY(-2px);
-    border-color: #e0e0e0;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-}
-
-.feature i {
-    font-size: 1.5rem;
-    color: #666;
-    margin-bottom: 0.8rem;
-    display: block;
-}
-
-.feature h3 {
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    color: #1a1a1a;
-    letter-spacing: -0.01em;
-}
-
-.feature p {
-    color: #666;
-    line-height: 1.6;
-    font-size: 0.95rem;
-}
-
-.app-description {
+.progress-overview {
     background: white;
     padding: 2rem;
     border-radius: 6px;
     border: 1px solid #e8e8e8;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
-.app-description p {
+.progress-overview p {
     font-size: 1rem;
     line-height: 1.7;
     color: #666;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.progress-overview p:last-child {
+    margin-bottom: 0;
+}
+
+.progress-items {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 6px;
+    border: 1px solid #e8e8e8;
+}
+
+.progress-item {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.progress-item:last-child {
+    border-bottom: none;
+}
+
+.progress-status {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    min-width: 30px;
+}
+
+.progress-text {
+    font-size: 0.95rem;
+    color: #666;
+    font-weight: 400;
+}
+
+.progress-status.completed {
+    opacity: 1;
+}
+
+.progress-status.in-progress {
+    opacity: 1;
+}
+
+.progress-status.pending {
+    opacity: 0.5;
 }
 
 /* DevLog Section */
@@ -377,8 +382,14 @@ body {
         font-size: 2rem;
     }
     
-    .app-features {
-        grid-template-columns: 1fr;
+    .progress-overview {
+        margin: 0 1rem 2rem;
+        padding: 1.5rem;
+    }
+    
+    .progress-items {
+        margin: 0 1rem;
+        padding: 1rem;
     }
     
     .log-header {
