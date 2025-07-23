@@ -39,42 +39,100 @@
                             <h2 class="section-title">開発ログ</h2>
                             <div class="devlog-content">
                                 <article class="log-entry">
-                                    <time class="log-date">2025.7.23 14:30</time>
+                                    <time class="log-date">2025.7.17</time>
                                     <div class="log-content">
-                                        <p>企業っぽすぎるデザインを手作り感のあるベータ版っぽく修正 😅</p>
-                                        <p>余白削って詰め詰めレイアウトに。絵文字も追加してカジュアル感をプラス</p>
+                                        <p>タスク関係の呼び出し関数の動作確認→OK</p>
                                     </div>
                                 </article>
                                 
                                 <article class="log-entry">
-                                    <time class="log-date">2025.7.23 11:15</time>
+                                    <time class="log-date">2025.7.16</time>
                                     <div class="log-content">
-                                        <p>開発ログの表示を日時+簡潔コメント形式に変更</p>
-                                        <p>タイトルとか箇条書きやめてシンプルに。Twitter風の感じを目指した</p>
+                                        <p>タスク関係の呼び出し関数を増やす</p>
+                                        <p>タスクの日時を追加→済</p>
                                     </div>
                                 </article>
                                 
                                 <article class="log-entry">
-                                    <time class="log-date">2025.7.23 09:45</time>
+                                    <time class="log-date">2025.7.15</time>
                                     <div class="log-content">
-                                        <p>サイトデザインをミニマルに刷新</p>
-                                        <p>カラフルなグラデーション→モノトーンに。Interフォントで少し洗練</p>
+                                        <p>タスクマネージャのUIを専用モーダルで実装</p>
                                     </div>
                                 </article>
                                 
                                 <article class="log-entry">
-                                    <time class="log-date">2025.7.23 08:20</time>
+                                    <time class="log-date">2025.7.14</time>
                                     <div class="log-content">
-                                        <p>GitHub Pages使って紹介サイト作成</p>
-                                        <p>とりあえず基本構造完成。レスポンシブもOK</p>
+                                        <p>システムメッセージの設定が会話履歴に反映されている→確認</p>
+                                        <p>タスクツール呼び出しで専用UIを表示確認</p>
                                     </div>
                                 </article>
                                 
                                 <article class="log-entry">
-                                    <time class="log-date">2025.7.22 16:00</time>
+                                    <time class="log-date">2025.7.10</time>
                                     <div class="log-content">
-                                        <p>YourAI（仮）プロジェクト開始！</p>
-                                        <p>個人的にAIアシスタント作ってみたくて始めました</p>
+                                        <p>デフォルトのUIを設計開始</p>
+                                    </div>
+                                </article>
+                                
+                                <article class="log-entry">
+                                    <time class="log-date">2025.7.9</time>
+                                    <div class="log-content">
+                                        <p>認証後のツール呼び出しが動作しなくなったのでその修正</p>
+                                        <p>AI SettingsからLLMを切り替えて、全てのLLMでストリーミングでツール応答→動作確認</p>
+                                    </div>
+                                </article>
+                                
+                                <article class="log-entry">
+                                    <time class="log-date">2025.7.8</time>
+                                    <div class="log-content">
+                                        <p>AI設定画面を作成し、LLMをアプリから切り替えられるようにする</p>
+                                        <p>認証前において全て確認済</p>
+                                    </div>
+                                </article>
+                                
+                                <article class="log-entry">
+                                    <time class="log-date">2025.7.7</time>
+                                    <div class="log-content">
+                                        <p>GroqAgent＋toolsAgent使用＋ストリーミング＋基本・ツール応答を実装済</p>
+                                        <p>マルチエージェントシステム→実装完了</p>
+                                        <p>toolsAgentの使用時　→　GroqとGeminiが不安定、openAIとanthropicは安定的</p>
+                                        <p>toolsAgent不使用時　→　全LLMが安定的に動作</p>
+                                        <p>スキル・LLM設定画面　→　作成</p>
+                                    </div>
+                                </article>
+                                
+                                <article class="log-entry">
+                                    <time class="log-date">2025.7.5</time>
+                                    <div class="log-content">
+                                        <p>toolsAgent + streamの動作確認を進める</p>
+                                        <p>OpenAI、Gemini、Anthropicは、stream+toolsAgentで、基本・ツール応答の動作確認済</p>
+                                    </div>
+                                </article>
+                                
+                                <article class="log-entry">
+                                    <time class="log-date">2025.7.3</time>
+                                    <div class="log-content">
+                                        <p>ツール呼び出し実装</p>
+                                        <p>GitHubに初回プッシュしモノレポのリモートリポジトリ作成</p>
+                                        <p>Google認証の時のserverAuthCode交換エラーの修正→完了</p>
+                                        <p>新環境モノレポ化後、OpenAIAgent＋toolsAgentで、基本応答・ツール応答→済</p>
+                                    </div>
+                                </article>
+                                
+                                <article class="log-entry">
+                                    <time class="log-date">2025.7.2</time>
+                                    <div class="log-content">
+                                        <p>モノレポ化して、デバッグに入る</p>
+                                        <p>後はGoogle認証の時のserverAuthCode交換エラーの修正</p>
+                                    </div>
+                                </article>
+                                
+                                <article class="log-entry">
+                                    <time class="log-date">2025.7.1</time>
+                                    <div class="log-content">
+                                        <p>Google認証ができないので、それを可能にする修正を開始</p>
+                                        <p>一旦、プロジェクトをモノレポ化し、統合したリポジトリをClaude Codeで統一的に参照できるようにし、デバッグ精度・効率の向上を目指すようにする</p>
                                     </div>
                                 </article>
                             </div>
@@ -83,7 +141,7 @@
                     
                     <div class="right-column">
                         <div id="progress" class="progress-section">
-                            <h2 class="section-title">YourAI（仮）と進捗状況</h2>
+                            <h2 class="section-title">YourAI（仮）</h2>
                             <div class="progress-content">
                                 <div class="progress-overview">
                                     <p><strong>YourAI（仮）はAIチャットアプリケーションです。</strong></p>
