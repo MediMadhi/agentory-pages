@@ -22,153 +22,74 @@
     </header>
 
     <main>
-        <section class="hero">
+        <section id="progress" class="section progress-section">
             <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">YourAI（仮）</h1>
-                    <p class="hero-subtitle">AIセクレタリーアプリケーション</p>
+                <h2 class="section-title">YourAI（仮）について</h2>
+                <div class="progress-content">
+                    <div class="progress-overview">
+                        <p><strong>YourAI（仮）はAIチャット型アプリケーションです。</strong></p>
+                        <p>自然言語で全てを管理しよう、というコンセプトのアプリケーションです。</p>
+                        <p>AIと会話しながら、日々のタスクやスケジュールを管理できます。</p>
+                        <p>日々のやること、計画、行動管理をより簡単にわかりやすく便利にする機能を実装しています。</p>
+                        <p>買い物のリストを伝えて、お店でチェックリストを出してくれたり、AIに指示すれば、やるべきことを覚えてくれて、いつでも教えてくれます。</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="section main-content-section">
+        <section id="devlog" class="section devlog-section">
             <div class="container">
-                <div class="two-column-layout">
-                    <div class="left-column">
-                        <div id="devlog" class="devlog-section">
-                            <h2 class="section-title">開発ログ</h2>
-                            <div class="devlog-content">
-                                <article class="log-entry">
-                                    <time class="log-date">2025.7.17</time>
-                                    <div class="log-content">
-                                        <p>タスク関係の呼び出し関数の動作確認→OK</p>
-                                    </div>
-                                </article>
-                                
-                                <article class="log-entry">
-                                    <time class="log-date">2025.7.16</time>
-                                    <div class="log-content">
-                                        <p>タスク関係の呼び出し関数を増やす</p>
-                                        <p>タスクの日時を追加→済</p>
-                                    </div>
-                                </article>
-                                
-                                <article class="log-entry">
-                                    <time class="log-date">2025.7.15</time>
-                                    <div class="log-content">
-                                        <p>タスクマネージャのUIを専用モーダルで実装</p>
-                                    </div>
-                                </article>
-                                
-                                <article class="log-entry">
-                                    <time class="log-date">2025.7.14</time>
-                                    <div class="log-content">
-                                        <p>システムメッセージの設定が会話履歴に反映されている→確認</p>
-                                        <p>タスクツール呼び出しで専用UIを表示確認</p>
-                                    </div>
-                                </article>
-                                
-                                <article class="log-entry">
-                                    <time class="log-date">2025.7.10</time>
-                                    <div class="log-content">
-                                        <p>デフォルトのUIを設計開始</p>
-                                    </div>
-                                </article>
-                                
-                                <article class="log-entry">
-                                    <time class="log-date">2025.7.9</time>
-                                    <div class="log-content">
-                                        <p>認証後のツール呼び出しが動作しなくなったのでその修正</p>
-                                        <p>AI SettingsからLLMを切り替えて、全てのLLMでストリーミングでツール応答→動作確認</p>
-                                    </div>
-                                </article>
-                                
-                                <article class="log-entry">
-                                    <time class="log-date">2025.7.8</time>
-                                    <div class="log-content">
-                                        <p>AI設定画面を作成し、LLMをアプリから切り替えられるようにする</p>
-                                        <p>認証前において全て確認済</p>
-                                    </div>
-                                </article>
-                                
-                                <article class="log-entry">
-                                    <time class="log-date">2025.7.7</time>
-                                    <div class="log-content">
-                                        <p>GroqAgent＋toolsAgent使用＋ストリーミング＋基本・ツール応答を実装済</p>
-                                        <p>マルチエージェントシステム→実装完了</p>
-                                        <p>toolsAgentの使用時　→　GroqとGeminiが不安定、openAIとanthropicは安定的</p>
-                                        <p>toolsAgent不使用時　→　全LLMが安定的に動作</p>
-                                        <p>スキル・LLM設定画面　→　作成</p>
-                                    </div>
-                                </article>
-                                
-                                <article class="log-entry">
-                                    <time class="log-date">2025.7.5</time>
-                                    <div class="log-content">
-                                        <p>toolsAgent + streamの動作確認を進める</p>
-                                        <p>OpenAI、Gemini、Anthropicは、stream+toolsAgentで、基本・ツール応答の動作確認済</p>
-                                    </div>
-                                </article>
-                                
-                                <article class="log-entry">
-                                    <time class="log-date">2025.7.3</time>
-                                    <div class="log-content">
-                                        <p>ツール呼び出し実装</p>
-                                        <p>GitHubに初回プッシュしモノレポのリモートリポジトリ作成</p>
-                                        <p>Google認証の時のserverAuthCode交換エラーの修正→完了</p>
-                                        <p>新環境モノレポ化後、OpenAIAgent＋toolsAgentで、基本応答・ツール応答→済</p>
-                                    </div>
-                                </article>
-                                
-                                <article class="log-entry">
-                                    <time class="log-date">2025.7.2</time>
-                                    <div class="log-content">
-                                        <p>モノレポ化して、デバッグに入る</p>
-                                        <p>後はGoogle認証の時のserverAuthCode交換エラーの修正</p>
-                                    </div>
-                                </article>
-                                
-                                <article class="log-entry">
-                                    <time class="log-date">2025.7.1</time>
-                                    <div class="log-content">
-                                        <p>Google認証ができないので、それを可能にする修正を開始</p>
-                                        <p>一旦、プロジェクトをモノレポ化し、統合したリポジトリをClaude Codeで統一的に参照できるようにし、デバッグ精度・効率の向上を目指すようにする</p>
-                                    </div>
-                                </article>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="right-column">
-                        <div id="progress" class="progress-section">
-                            <h2 class="section-title">YourAI（仮）</h2>
-                            <div class="progress-content">
-                                <div class="progress-overview">
-                                    <p><strong>YourAI（仮）はAIチャットアプリケーションです。</strong></p>
-                                    <p>日々のやること、計画、行動管理をより簡単にわかりやすく便利にする機能を実装しています。</p>
-                                    <p>買い物のリストを伝えて、お店でチェックリストを出してくれたり、AIに指示すれば、やるべきことを覚えてくれて、いつでも教えてくれます。</p>
-                                </div>
-                                <div class="progress-items">
-                                    <div class="progress-item">
-                                        <span class="progress-status completed">✅</span>
-                                        <span class="progress-text">基本UI設計</span>
-                                    </div>
-                                    <div class="progress-item">
-                                        <span class="progress-status in-progress">🔄</span>
-                                        <span class="progress-text">AI対話機能</span>
-                                    </div>
-                                    <div class="progress-item">
-                                        <span class="progress-status pending">⏳</span>
-                                        <span class="progress-text">スケジュール管理</span>
-                                    </div>
-                                    <div class="progress-item">
-                                        <span class="progress-status pending">⏳</span>
-                                        <span class="progress-text">データ永続化</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <h2 class="section-title">開発ログ</h2>
+                <div class="devlog-content">
+                    <textarea class="devlog-textarea" readonly>2025.7.17
+タスク関係の呼び出し関数の動作確認→OK
+
+2025.7.16
+タスク関係の呼び出し関数を増やす
+タスクの日時を追加→済
+
+2025.7.15
+タスクマネージャのUIを専用モーダルで実装
+
+2025.7.14
+システムメッセージの設定が会話履歴に反映されている→確認
+タスクツール呼び出しで専用UIを表示確認
+
+2025.7.10
+デフォルトのUIを設計開始
+
+2025.7.9
+認証後のツール呼び出しが動作しなくなったのでその修正
+AI SettingsからLLMを切り替えて、全てのLLMでストリーミングでツール応答→動作確認
+
+2025.7.8
+AI設定画面を作成し、LLMをアプリから切り替えられるようにする
+認証前において全て確認済
+
+2025.7.7
+GroqAgent＋toolsAgent使用＋ストリーミング＋基本・ツール応答を実装済
+マルチエージェントシステム→実装完了
+toolsAgentの使用時　→　GroqとGeminiが不安定、openAIとanthropicは安定的
+toolsAgent不使用時　→　全LLMが安定的に動作
+スキル・LLM設定画面　→　作成
+
+2025.7.5
+toolsAgent + streamの動作確認を進める
+OpenAI、Gemini、Anthropicは、stream+toolsAgentで、基本・ツール応答の動作確認済
+
+2025.7.3
+ツール呼び出し実装
+GitHubに初回プッシュしモノレポのリモートリポジトリ作成
+Google認証の時のserverAuthCode交換エラーの修正→完了
+新環境モノレポ化後、OpenAIAgent＋toolsAgentで、基本応答・ツール応答→済
+
+2025.7.2
+モノレポ化して、デバッグに入る
+後はGoogle認証の時のserverAuthCode交換エラーの修正
+
+2025.7.1
+Google認証ができないので、それを可能にする修正を開始
+一旦、プロジェクトをモノレポ化し、統合したリポジトリをClaude Codeで統一的に参照できるようにし、デバッグ精度・効率の向上を目指すようにする</textarea>
                 </div>
             </div>
         </section>
