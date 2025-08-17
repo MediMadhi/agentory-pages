@@ -22,7 +22,7 @@ body {
 
 /* Header Styles */
 .header {
-    background: rgba(240, 240, 240, 0.95);
+    background: #e0e0e0;
     backdrop-filter: blur(20px);
     border-bottom: 1px solid #d0d0d0;
     position: sticky;
@@ -336,8 +336,8 @@ body {
 
 /* Footer */
 .footer {
-    background: #1a1a1a;
-    color: #999;
+    background: #e0e0e0;
+    color: #666;
     text-align: center;
     padding: 2.5rem 0;
     font-size: 0.9rem;
