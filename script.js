@@ -17,11 +17,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.header');
     if (window.scrollY > 50) {
-        header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+        header.style.backgroundColor = '#e0e0e0';
         header.style.borderBottomColor = '#d0d0d0';
     } else {
-        header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-        header.style.borderBottomColor = '#e5e5e5';
+        header.style.backgroundColor = '#e0e0e0';
+        header.style.borderBottomColor = '#d0d0d0';
     }
 });
 
