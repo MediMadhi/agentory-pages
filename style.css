@@ -1,3 +1,11 @@
+.disclaimer {
+    background-color: #fffbe6;
+    color: #8a6d3b;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
 /* Reset and Base Styles */
 :root {
     --bg-color: #fdfdfd;
