@@ -1,0 +1,77 @@
+:root {
+    --bg-color: #F5F5F0; /* ライトグレージュ */
+    --text-color: #4a4a4a;
+    --accent-color: #C3BBAE;
+    --header-font: 'Lora', serif;
+    --body-font: 'Noto Sans JP', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color);
+    font-family: var(--body-font);
+    color: var(--text-color);
+    -webkit-font-smoothing: antialiased;
+}
+
+.card {
+    text-align: center;
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    max-width: 400px;
+    width: 90%;
+}
+
+.profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    margin: 0 auto 25px;
+    border: 5px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.name {
+    font-family: var(--header-font);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.bio {
+    font-size: 1.1rem;
+    color: #777;
+    margin: 0 0 30px 0;
+}
+
+.links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: 1px solid var(--accent-color);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.links a:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+.links a .fab {
+    font-size: 1.2rem;
+}
