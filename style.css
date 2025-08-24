@@ -171,6 +171,23 @@ section h2 {
     padding-bottom: 10px;
 }
 
+.dev-log-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.dev-log-header h3 {
+    margin-bottom: 0;
+}
+
+#show-all-logs-link {
+    font-size: 0.9rem;
+    font-family: var(--body-font);
+    cursor: pointer;
+}
+
 .log-container ul {
     list-style-type: none;
     padding-left: 0;
@@ -191,6 +208,8 @@ section h2 {
     font-family: 'Menlo', 'Monaco', monospace;
     font-size: 0.9rem;
     border: 1px solid var(--border-color);
+    max-height: 400px;
+    overflow-y: auto;
 }
 
 /* FAQ Section */

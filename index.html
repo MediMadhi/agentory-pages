@@ -68,7 +68,10 @@
                     <li><b>マルチLLM対応:</b> OpenAI, Anthropic, Gemini, Groqの4大LLMに対応完了。</li>
                     <li><b>認証基盤:</b> Google OAuth2.0による安全な認証と自動トークンリフレッシュを実装。</li>
                 </ul>
-                <h3>最近の更新</h3>
+                <div class="dev-log-header">
+                    <h3>最近の更新</h3>
+                    <a href="#" id="show-all-logs-link">すべての更新を表示</a>
+                </div>
                 <pre>
 2025-08-24 | ダークモードの不具合を修正
 2025-08-23 | 新規タスク作成画面のUI調整
@@ -77,6 +80,96 @@
 2025-08-23 | タスクリストのカスタムカラー設定を実装
 2025-08-22 | カレンダーカラーの双方向設定を実装
                 </pre>
+                <div id="all-logs-container" style="display: none;">
+                    <pre>
+2025-08-24 | implemented: claudeでの修正　ダークモードが無効になっていたのを修正
+2025-08-23 | implemented: タスク新規作成画面での期間の設定を調整中
+2025-08-23 | implemented: ベースカラーは設定画面と表示設定画面の両方で対応、予定カードの色は外枠がカレンダー色、塗り潰しは予定固有色（設定がある場合）
+2025-08-23 | implemented: 設定の外観はカラースキームのみ、managerビューの設定でカラー関係は集約
+2025-08-23 | implemented: タスクリストの色を設定できるようにし、タイムラインと右パネル上のタスクカードに反映させるようにした
+2025-08-23 | implemented: タスクカードと予定カードが表示されなくなった問題を修正
+2025-08-23 | implemented: アプリのベースカラーを設定可能に
+2025-08-22 | implemented: カレンダーカラーの双方向設定を実装
+2025-08-22 | feat(weekly): show only task dots under dates; hide event dots
+2025-08-21 | refactor(ui): centralize remaining modal/timeline accent colors to design system
+2025-08-21 | fix(ts): resolve duplicate import and arg mismatch in TimelineView; remove unused static styles
+2025-08-21 | chore(log): guard/remove dev logs in calendar components
+2025-08-21 | refactor(ui): replace hardcoded blues with theme accent across modals
+2025-08-21 | feat(theme): add calendarAccent to settings and ThemeContext
+2025-08-21 | feat(calendar): extract day color utils and apply to weekly/monthly
+2025-08-21 | feat(design-system): add calendar tokens (accent/ring/today/muted)
+2025-08-21 | implemented: カレンダー選択中日付のフォントカラーを調整
+2025-08-19 | implemented: カレンダー日付のフォントカラーをダークモードで最適化
+2025-08-19 | implemented: managerビュー全体・ヘッダー・カレンダー・シート・タブバーにすりガラス風背景を施す
+2025-08-19 | implemented: Manager ViewとChat Viewのヘッダーの高さを揃える
+2025-08-19 | implemented: することタブのスクロールの表示領域を画面の下端まで広げる
+2025-08-19 | implemented: タイムラインシートの表示領域を画面の下端まで広げる
+2025-08-19 | implemented: タイムラインタブでも全て透明化 + Fixed Errors
+2025-08-19 | implemented: タイムラインタブでも全て透明化
+2025-08-19 | implemented: 白い追従エリアを透明化
+2025-08-19 | implemented: restored.
+2025-08-18 | implemented: ダークモード時のステータスバーの文字色を白系に修正
+2025-08-18 | implemented: 外観の詳細設定画面を作り、カラースキーマと予定・タスクのカラー設定ができるようにした。そしてダークモード時のタイムラインシートの背景色をダークになるように修正
+2025-08-18 | implemented: タスクに開始日時を設定するとタイムラインにタスクカードが表示されるように実装
+2025-08-18 | implemented: Googleタスクのウェブアプリで日付を設定しても反映されない問題を解決
+2025-08-17 | implemented: タスクの時間を設定し、MongoDBに永続保存させるようにした
+2025-08-17 | Implemented: タスク詳細設定・新規作成で時間設定可能に
+2025-08-17 | Implemented: 終日予定エリア左の日付・曜日表示を上揃えに
+2025-08-16 | Implemented: 予定をシート右1/3に表示
+2025-08-16 | Implemented: カレンダーのフラッターの修正完了
+2025-08-11 | Implemented: タスクリストの展開状態を維持する
+2025-08-11 | Implementing: manager viewのヘッダータイトルと右側のアイコンの配置修正
+2025-08-08 | Implementing: することタブのリスト名表示非表示、完了済み表示非表示のボタンを修正
+2025-08-08 | Implementing: You can choose which calendar to display
+2025-08-08 | Implementing: Create New Task And Event Button 3 - correspond to highlight and Icons
+2025-08-07 | Implementing: Create New Task And Event Button 2
+2025-08-07 | Implementing: Create New Task And Event Button
+2025-08-07 | Implementing: task area position fixed 1
+2025-08-06 | Implementing: time line sheet position fixed
+2025-08-06 | Implementing: Monthly calendar red dot only
+2025-08-06 | Implementing: Monthly calendar date sync 3
+2025-08-06 | Implementing: Monthly calendar date sync 2
+2025-08-05 | Implementing: Monthly calendar date sync
+2025-08-05 | Implementing: Monthly calendar view 8
+2025-08-05 | Implementing: Monthly calendar view 7
+2025-08-04 | Implementing: Monthly calendar view
+2025-08-02 | Implementing: Monthly calendar view 5
+2025-08-02 | Implementing: Monthly calendar view 4
+2025-08-02 | Implementing: Monthly calendar view 3
+2025-08-02 | Implementing: Monthly calendar view 2
+2025-08-01 | Implementing: Monthly calendar view 1
+2025-07-29 | Implementing: TimeLineView 4
+2025-07-29 | Implementing: TimeLineView 3
+2025-07-28 | Implementing: TimeLineView 2
+2025-07-26 | Implementing: TimeLineView 1
+2025-07-26 | Implementing: TimeLineView
+2025-07-23 | Implementing: taskview
+2025-07-21 | Implementing: manager view
+2025-07-18 | Implementing: Calendar View 2
+2025-07-18 | Implementing: Calendar View 1
+2025-07-18 | Success: Task skill implemented
+2025-07-17 | Success: task UI 2
+2025-07-16 | Success: task UI
+2025-07-14 | Success fixing crash on closing setting screen with system prompt
+2025-07-11 | modified: Settings
+2025-07-11 | UI Planning
+2025-07-09 | CLAUDE.md AGENTS.md GEMINI.md
+2025-07-09 | SUCCESS: AI設定画面からLLMを切り替えてそれぞれでストリーミングでツール実行の動作確認ができた root
+2025-07-09 | SUCCESS: AI設定画面からLLMを切り替えてそれぞれでストリーミングでツール実行の動作確認ができた
+2025-07-09 | fixing: AI設定画面を作成してからツール呼び出しがなぜか実行されない問題を修正している
+2025-07-07 | スキル管理、LLMモデル設定画面の作成
+2025-07-07 | Success: all LLM works on streaming
+2025-07-07 | fixing: groq+toolsAgent+streaming+toolcalls
+2025-07-07 | fixing: groq+toolsAgent+streaming+toolcalls
+2025-07-06 | success: groq + toolsAgent 2
+2025-07-06 | success: groq + toolsAgent
+2025-07-05 | Success: OpenAI + stream + toolsAgent
+2025-07-03 | modified: CLAUDE.md AuthContext
+2025-07-03 | Restore: Complete server codebase with full authentication and GraphAI integration
+2025-07-03 | Update: Add .gitignore and exclude large files
+2025-07-03 | Initial commit
+                    </pre>
+                </div>
             </div>
         </section>
 
@@ -104,5 +197,19 @@
             <p>&copy; 2025 Agentory Inc.</p>
         </div>
     </footer>
+    <script>
+        const link = document.getElementById('show-all-logs-link');
+        const container = document.getElementById('all-logs-container');
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            if (container.style.display === 'none') {
+                container.style.display = 'block';
+                link.textContent = '更新を隠す';
+            } else {
+                container.style.display = 'none';
+                link.textContent = 'すべての更新を表示';
+            }
+        });
+    </script>
 </body>
 </html>
