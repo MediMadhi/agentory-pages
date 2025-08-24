@@ -3,143 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YourAI（仮） - AI Secretary Application</title>
-    <meta name="description" content="YourAI（仮）は次世代のAIセクレタリーアプリケーションです。開発ログと開発者情報をご覧ください。">
+    <title>Agentory - あなたのAI秘書</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <nav class="nav">
-                <div class="logo">
-                    <i class="fas fa-robot"></i>
-                    <span>YourAI（仮）</span>
-                </div>
-            </nav>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>全人類に、AI秘書を。</h1>
+            <p>次に何をすべきか、もう迷わない。</p>
+            <p class="subtitle">あなたの予定と行動をAIが理解し、"次の一手"を提案。<br>毎日がスムーズに、もっとクリアに。</p>
+            <div class="store-buttons">
+                <a href="#" class="store-button apple">App Store</a>
+                <a href="#" class="store-button google">Google Play</a>
+            </div>
         </div>
     </header>
 
     <main>
-        <section id="progress" class="section progress-section">
-            <div class="container">
-                <h2 class="section-title">YourAI（仮）について</h2>
-                <div class="progress-content">
-                    <div class="progress-overview">
-                        <p><strong>YourAI（仮）はAIチャット型アプリケーションです。</strong></p>
-                        <p>自然言語で全てを管理しよう、というコンセプトのアプリケーションです。</p>
-                        <p>AIと会話しながら、日々のタスクやスケジュールを管理できます。</p>
-                        <p>日々のやること、計画、行動管理をより簡単にわかりやすく便利にする機能を実装しています。</p>
-                        <p>買い物のリストを伝えて、お店でチェックリストを出してくれたり、AIに指示すれば、やるべきことを覚えてくれて、いつでも教えてくれます。</p>
-                    </div>
+        <section class="features">
+            <h2>特徴</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>🧠 AIによる行動提案</h3>
+                    <p>予定・タスク・行動の履歴をもとに、AIが「今やるべきこと」を提案します。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>📅 スマートなスケジュール管理</h3>
+                    <p>複雑な予定も、AIがわかりやすく整理して表示。シームレスなGoogle連携にも対応。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🎯 集中力を最大化</h3>
+                    <p>優先順位が自然と見えるから、無駄な迷いがなくなる。“考える時間”を減らし、あなたのパフォーマンスを引き出します。</p>
                 </div>
             </div>
         </section>
 
-        <section id="devlog" class="section devlog-section">
-            <div class="container">
-                <h2 class="section-title">開発ログ</h2>
-                <div class="devlog-content">
-                    <textarea class="devlog-textarea" readonly>2025.8.17
-タスクの詳細管理が完成しました
-時間を指定してタスクを作れるようになりました
-カレンダーの見た目もさらに使いやすく調整
+        <section class="concept">
+            <h2>コンセプト</h2>
+            <h3>思考の余白を、AIがつくる。</h3>
+            <p>このアプリは、ただの予定管理ツールではありません。<br>あなたの行動や習慣を理解し、AIが次に何をすべきかを提案します。<br>「いま何をすればいいのか？」という問いに、<br>一瞬で答えてくれる“AI秘書”を、あなたの手元に。</p>
+        </section>
 
-2025.8.16
-月間カレンダーのスクロールがスムーズになりました
-予定の表示エリアを画面右側に移動して見やすく改善
-細かなスクロールの不具合も修正できました
-
-2025.8.11
-タスクリストの開いた状態が記憶されるようになりました
-ヘッダーのレイアウトを統一してスッキリと
-アイコンの位置も細かく調整して整いました
-
-2025.8.8
-タスクリストの表示方法を選べるようになりました
-どのカレンダーを表示するか選択できるように
-完了したタスクの表示・非表示も改善
-
-2025.8.7
-新しいタスクや予定を作るボタンを統合しました
-ドラッグ&ドロップで直感的に操作できるように
-ボタンのハイライト表示も追加
-
-2025.8.6
-月間カレンダーの表示を本格的に作り込みました
-タイムラインの配置を調整してより見やすく
-タスクの日付にドット表示も付けました
-
-2025.8.5
-月間カレンダーの日付がちゃんと同期するように
-何度も細かい調整を重ねて改良しました
-
-2025.8.4
-月間カレンダーの基本的な仕組みを作り始めました
-管理画面全体のデザインも見直し
-
-2025.7.17
-タスク関係の処理がちゃんと動いているか確認→OK
-
-2025.7.16
-タスク関係の機能をもっと増やしてみました
-タスクに日時を設定できるようになりました
-
-2025.7.15
-タスクマネージャのUIを専用モーダルで実装
-
-2025.7.14
-システムメッセージの設定が会話履歴に反映されている→確認
-タスクツール呼び出しで専用UIを表示確認
-
-2025.7.10
-デフォルトのUIを設計開始
-
-2025.7.9
-認証後のツール呼び出しが動作しなくなったのでその修正
-AI SettingsからLLMを切り替えて、全てのLLMでストリーミングでツール応答→動作確認
-
-2025.7.8
-AI設定画面を作成し、LLMをアプリから切り替えられるようにする
-認証前において全て確認済
-
-2025.7.7
-GroqAgent＋toolsAgent使用＋ストリーミング＋基本・ツール応答を実装済
-マルチエージェントシステム→実装完了
-toolsAgentの使用時　→　GroqとGeminiが不安定、openAIとanthropicは安定的
-toolsAgent不使用時　→　全LLMが安定的に動作
-スキル・LLM設定画面　→　作成
-
-2025.7.5
-toolsAgent + streamの動作確認を進める
-OpenAI、Gemini、Anthropicは、stream+toolsAgentで、基本・ツール応答の動作確認済
-
-2025.7.3
-ツール呼び出し実装
-GitHubに初回プッシュしモノレポのリモートリポジトリ作成
-Google認証の時のserverAuthCode交換エラーの修正→完了
-新環境モノレポ化後、OpenAIAgent＋toolsAgentで、基本応答・ツール応答→済
-
-2025.7.2
-モノレポ化して、デバッグに入る
-後はGoogle認証の時のserverAuthCode交換エラーの修正
-
-2025.7.1
-Google認証ができないので、それを可能にする修正を開始
-一旦、プロジェクトをモノレポ化し、統合したリポジトリをClaude Codeで統一的に参照できるようにし、デバッグ精度・効率の向上を目指すようにする</textarea>
-                </div>
+        <section class="screenshots">
+            <h2>スクリーンショット</h2>
+            <div class="screenshot-gallery">
+                <div class="screenshot-placeholder">[📱 スクリーンショット1（ホーム画面）]</div>
+                <div class="screenshot-placeholder">[📱 スクリーンショット2（提案画面）]</div>
+                <div class="screenshot-placeholder">[📱 スクリーンショット3（設定・連携機能）]</div>
             </div>
         </section>
 
+        <section class="dev-log">
+            <h2>開発ログ</h2>
+            <div class="log-container">
+                <h3>主な開発の進捗</h3>
+                <ul>
+                    <li><b>UI/UXの大幅改善:</b> タスクのカードスタイル化、テーマカラー対応、完了タスクの視覚的区別など。</li>
+                    <li><b>タスク詳細管理:</b> サブタスクを含めた完全なタスク編集機能（タイトル、メモ、期日）を実装。</li>
+                    <li><b>Google Tasks API統合:</b> `tasks.move`を利用した正しい階層構造でのサブタスク管理を実現。</li>
+                    <li><b>マルチLLM対応:</b> OpenAI, Anthropic, Gemini, Groqの4大LLMに対応完了。</li>
+                    <li><b>認証基盤:</b> Google OAuth2.0による安全な認証と自動トークンリフレッシュを実装。</li>
+                </ul>
+                <h3>最近の更新</h3>
+                <pre>
+2025-08-24 | ダークモードの不具合を修正
+2025-08-23 | 新規タスク作成画面のUI調整
+2025-08-23 | 予定カードの配色ロジックを改善
+2025-08-23 | カラー設定画面をマネージャービューに集約
+2025-08-23 | タスクリストのカスタムカラー設定を実装
+2025-08-22 | カレンダーカラーの双方向設定を実装
+                </pre>
+            </div>
+        </section>
+
+        <section class="faq">
+            <h2>よくある質問</h2>
+            <div class="faq-item">
+                <h4>Q. どんな人におすすめですか？</h4>
+                <p>A. 忙しいビジネスパーソンや、毎日の予定に追われがちな人に最適です。</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q. データは安全ですか？</h4>
+                <p>A. はい。通信はすべて暗号化され、個人データはユーザーの許可なしに外部に送信されません。</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q. 無料で使えますか？</h4>
+                <p>A. 基本機能は無料です。さらに高度なAI提案機能はプレミアムプランでご利用いただけます（近日公開）。</p>
+            </div>
+        </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 YourAI（仮）. All rights reserved.</p>
+    <footer>
+        <div class="footer-content">
+            <a href="#">プライバシーポリシー</a>
+            <a href="#">利用規約</a>
+            <p>&copy; 2025 Agentory Inc.</p>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
