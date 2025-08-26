@@ -60,155 +60,101 @@
         <section class="dev-log">
             <h2>開発ログ</h2>
             <div class="log-container">
-                <h3>最近の大きな変更</h3>
-                <article class="log-entry">
-                    <h4>認証フローとAPIレスポンスの統一、そして安定化（2025/08/26）</h4>
-                    <ul>
-                        <li><b>Envelope形式に統一:</b> サーバーは <code>ok(data)</code>/<code>fail(...)</code>、クライアントは <code>extractData</code> で展開。</li>
-                        <li><b>HTTPクライアント導入:</b> Axiosベースの <code>httpClient</code> を追加。<code>Authorization</code>/<code>X-Session-ID</code>/<code>X-Request-Id</code> を自動付与。401は自動リフレッシュ → 1回再試行。</li>
-                        <li><b>認証フローの安定化:</b> <code>/auth/google</code> 応答の取りこぼしを解消（JWTペイロード/既存セッションなどのフォールバック）。設定画面のフローも <code>httpClient</code> に統一。</li>
-                        <li><b>取得の重複を軽減:</b> AI設定取得は in-flight 制御＋短期キャッシュで重複呼び出しを抑制。</li>
-                        <li><b>ベースURL解決の強化:</b> <code>extra.apiUrl</code> → <code>EXPO_PUBLIC_API_URL</code> → <code>backendUrl + /api</code> → <code>http://localhost:3000/api</code> の順で解決。</li>
-                    </ul>
-                    <p class="note">見えないところの大掃除が進み、これからの開発・調査がずっと楽になります。</p>
-                </article>
-                <article class="log-entry">
-                    <h4>タスクとカレンダーの表示まわりを整えました（2025/01/23）</h4>
-                    <ul>
-                        <li>タスク詳細画面を作り込み（タイトル/メモ/期日/完了）。</li>
-                        <li>サブタスクの作成・編集・削除に対応、2階層の構造も見やすく。</li>
-                        <li>Google Tasks APIの仕様に合わせ、<code>insert → move</code> 手順で正しい階層を維持。</li>
-                    </ul>
-                </article>
-                <article class="log-entry">
-                    <h4>予定とタスクの理解をそろえました（2025/01/23）</h4>
-                    <ul>
-                        <li><b>予定（Event）:</b> その時間に必ず行うもの（開始/終了がある）。</li>
-                        <li><b>タスク（ToDo）:</b> 期日までにやればよいもの（時間帯は任意）。</li>
-                        <li>タスクは必要に応じてカレンダーに落として時間を確保（時間ブロッキング）。</li>
-                    </ul>
-                </article>
-                <article class="log-entry">
-                    <h4>Google 認証・ツール連携の安定化（2025/07/09）</h4>
-                    <ul>
-                        <li>ログイン後にGoogle Tasksのツールが使えない問題を解消。</li>
-                        <li>セッションIDの扱いを見直し、ログイン直後からツールが使えるように。</li>
-                        <li>Gemini など他プロバイダの会話履歴フォーマットも整備。</li>
-                    </ul>
-                </article>
-                <div class="dev-log-header">
-                    <h3>過去の更新</h3>
-                    <a href="#" id="show-all-logs-link">すべての更新を表示</a>
+                <div class="log-item" data-type="refactor">
+                    <div class="log-header">
+                        <span class="log-date">2025-08-26</span>
+                        <h4 class="log-title">認証フローとAPIレスポンスの安定化</h4>
+                    </div>
+                    <div class="log-body">
+                        <p>見えないところの大掃除。サーバーとクライアント間の通信仕様を統一し、認証まわりの動作を安定させました。今後の開発・調査がずっと楽になります。</p>
+                        <ul>
+                            <li><b>Envelope形式に統一:</b> サーバーは <code>ok(data)</code>/<code>fail(...)</code>、クライアントは <code>extractData</code> で展開。</li>
+                            <li><b>HTTPクライアント導入:</b> Axiosベースの <code>httpClient</code> を追加し、認証ヘッダを自動付与。401エラー時は自動でトークンをリフレッシュして1回再試行します。</li>
+                            <li><b>認証フローの安定化:</b> ログイン直後の処理こぼしを解消。</li>
+                            <li><b>取得の重複を軽減:</b> in-flight制御＋短期キャッシュでAPIの重複呼び出しを抑制。</li>
+                            <li><b>ベースURL解決の強化:</b> 様々な環境でAPIサーバーのURLを自動解決できるように。</li>
+                        </ul>
+                    </div>
                 </div>
-                <ul>
-                    <li><b>UI/UXの大幅改善:</b> タスクのカードスタイル化、テーマカラー対応、完了タスクの視覚的区別など。</li>
-                    <li><b>タスク詳細管理:</b> サブタスクを含めた完全なタスク編集機能（タイトル、メモ、期日）を実装。</li>
-                    <li><b>Google Tasks API統合:</b> `tasks.move`を利用した正しい階層構造でのサブタスク管理を実現。</li>
-                    <li><b>マルチLLM対応:</b> OpenAI, Anthropic, Gemini, Groqの4大LLMに対応完了。</li>
-                    <li><b>認証基盤:</b> Google OAuth2.0による安全な認証と自動トークンリフレッシュを実装。</li>
-                </ul>
-                <div class="dev-log-header">
-                    <h3>最近の更新</h3>
-                    <a href="#" id="show-all-logs-link">すべての更新を表示</a>
+
+                <div class="log-item" data-type="feat">
+                    <div class="log-header">
+                        <span class="log-date">2025-08-24</span>
+                        <h4 class="log-title">ダークモードの不具合を修正</h4>
+                    </div>
                 </div>
-                <pre>
-2025-08-24 | ダークモードの不具合を修正
-2025-08-23 | 新規タスク作成画面のUI調整
-2025-08-23 | 予定カードの配色ロジックを改善
-2025-08-23 | カラー設定画面をマネージャービューに集約
-2025-08-23 | タスクリストのカスタムカラー設定を実装
-2025-08-22 | カレンダーカラーの双方向設定を実装
-                </pre>
-                <div id="all-logs-container" style="display: none;">
-                    <pre>
-2025-08-24 | implemented: claudeでの修正　ダークモードが無効になっていたのを修正
-2025-08-23 | implemented: タスク新規作成画面での期間の設定を調整中
-2025-08-23 | implemented: ベースカラーは設定画面と表示設定画面の両方で対応、予定カードの色は外枠がカレンダー色、塗り潰しは予定固有色（設定がある場合）
-2025-08-23 | implemented: 設定の外観はカラースキームのみ、managerビューの設定でカラー関係は集約
-2025-08-23 | implemented: タスクリストの色を設定できるようにし、タイムラインと右パネル上のタスクカードに反映させるようにした
-2025-08-23 | implemented: タスクカードと予定カードが表示されなくなった問題を修正
-2025-08-23 | implemented: アプリのベースカラーを設定可能に
-2025-08-22 | implemented: カレンダーカラーの双方向設定を実装
-2025-08-22 | feat(weekly): show only task dots under dates; hide event dots
-2025-08-21 | refactor(ui): centralize remaining modal/timeline accent colors to design system
-2025-08-21 | fix(ts): resolve duplicate import and arg mismatch in TimelineView; remove unused static styles
-2025-08-21 | chore(log): guard/remove dev logs in calendar components
-2025-08-21 | refactor(ui): replace hardcoded blues with theme accent across modals
-2025-08-21 | feat(theme): add calendarAccent to settings and ThemeContext
-2025-08-21 | feat(calendar): extract day color utils and apply to weekly/monthly
-2025-08-21 | feat(design-system): add calendar tokens (accent/ring/today/muted)
-2025-08-21 | implemented: カレンダー選択中日付のフォントカラーを調整
-2025-08-19 | implemented: カレンダー日付のフォントカラーをダークモードで最適化
-2025-08-19 | implemented: managerビュー全体・ヘッダー・カレンダー・シート・タブバーにすりガラス風背景を施す
-2025-08-19 | implemented: Manager ViewとChat Viewのヘッダーの高さを揃える
-2025-08-19 | implemented: することタブのスクロールの表示領域を画面の下端まで広げる
-2025-08-19 | implemented: タイムラインシートの表示領域を画面の下端まで広げる
-2025-08-19 | implemented: タイムラインタブでも全て透明化 + Fixed Errors
-2025-08-19 | implemented: タイムラインタブでも全て透明化
-2025-08-19 | implemented: 白い追従エリアを透明化
-2025-08-19 | implemented: restored.
-2025-08-18 | implemented: ダークモード時のステータスバーの文字色を白系に修正
-2025-08-18 | implemented: 外観の詳細設定画面を作り、カラースキーマと予定・タスクのカラー設定ができるようにした。そしてダークモード時のタイムラインシートの背景色をダークになるように修正
-2025-08-18 | implemented: タスクに開始日時を設定するとタイムラインにタスクカードが表示されるように実装
-2025-08-18 | implemented: Googleタスクのウェブアプリで日付を設定しても反映されない問題を解決
-2025-08-17 | implemented: タスクの時間を設定し、MongoDBに永続保存させるようにした
-2025-08-17 | Implemented: タスク詳細設定・新規作成で時間設定可能に
-2025-08-17 | Implemented: 終日予定エリア左の日付・曜日表示を上揃えに
-2025-08-16 | Implemented: 予定をシート右1/3に表示
-2025-08-16 | Implemented: カレンダーのフラッターの修正完了
-2025-08-11 | Implemented: タスクリストの展開状態を維持する
-2025-08-11 | Implementing: manager viewのヘッダータイトルと右側のアイコンの配置修正
-2025-08-08 | Implementing: することタブのリスト名表示非表示、完了済み表示非表示のボタンを修正
-2025-08-08 | Implementing: You can choose which calendar to display
-2025-08-08 | Implementing: Create New Task And Event Button 3 - correspond to highlight and Icons
-2025-08-07 | Implementing: Create New Task And Event Button 2
-2025-08-07 | Implementing: Create New Task And Event Button
-2025-08-07 | Implementing: task area position fixed 1
-2025-08-06 | Implementing: time line sheet position fixed
-2025-08-06 | Implementing: Monthly calendar red dot only
-2025-08-06 | Implementing: Monthly calendar date sync 3
-2025-08-06 | Implementing: Monthly calendar date sync 2
-2025-08-05 | Implementing: Monthly calendar date sync
-2025-08-05 | Implementing: Monthly calendar view 8
-2025-08-05 | Implementing: Monthly calendar view 7
-2025-08-04 | Implementing: Monthly calendar view
-2025-08-02 | Implementing: Monthly calendar view 5
-2025-08-02 | Implementing: Monthly calendar view 4
-2025-08-02 | Implementing: Monthly calendar view 3
-2025-08-02 | Implementing: Monthly calendar view 2
-2025-08-01 | Implementing: Monthly calendar view 1
-2025-07-29 | Implementing: TimeLineView 4
-2025-07-29 | Implementing: TimeLineView 3
-2025-07-28 | Implementing: TimeLineView 2
-2025-07-26 | Implementing: TimeLineView 1
-2025-07-26 | Implementing: TimeLineView
-2025-07-23 | Implementing: taskview
-2025-07-21 | Implementing: manager view
-2025-07-18 | Implementing: Calendar View 2
-2025-07-18 | Implementing: Calendar View 1
-2025-07-18 | Success: Task skill implemented
-2025-07-17 | Success: task UI 2
-2025-07-16 | Success: task UI
-2025-07-14 | Success fixing crash on closing setting screen with system prompt
-2025-07-11 | modified: Settings
-2025-07-11 | UI Planning
-2025-07-09 | CLAUDE.md AGENTS.md GEMINI.md
-2025-07-09 | SUCCESS: AI設定画面からLLMを切り替えてそれぞれでストリーミングでツール実行の動作確認ができた root
-2025-07-09 | SUCCESS: AI設定画面からLLMを切り替えてそれぞれでストリーミングでツール実行の動作確認ができた
-2025-07-09 | fixing: AI設定画面を作成してからツール呼び出しがなぜか実行されない問題を修正している
-2025-07-07 | スキル管理、LLMモデル設定画面の作成
-2025-07-07 | Success: all LLM works on streaming
-2025-07-07 | fixing: groq+toolsAgent+streaming+toolcalls
-2025-07-07 | fixing: groq+toolsAgent+streaming+toolcalls
-2025-07-06 | success: groq + toolsAgent 2
-2025-07-06 | success: groq + toolsAgent
-2025-07-05 | Success: OpenAI + stream + toolsAgent
-2025-07-03 | modified: CLAUDE.md AuthContext
-2025-07-03 | Restore: Complete server codebase with full authentication and GraphAI integration
-2025-07-03 | Update: Add .gitignore and exclude large files
-2025-07-03 | Initial commit
-                    </pre>
+
+                <div class="log-item" data-type="feat">
+                    <div class="log-header">
+                        <span class="log-date">2025-08-23</span>
+                        <h4 class="log-title">UI/UXの調整</h4>
+                    </div>
+                    <div class="log-body">
+                        <ul>
+                            <li>新規タスク作成画面のUI調整</li>
+                            <li>予定カードの配色ロジックを改善</li>
+                            <li>カラー設定画面をマネージャービューに集約</li>
+                            <li>タスクリストのカスタムカラー設定を実装</li>
+                        </ul>
+                    </div>
                 </div>
+
+                <div class="log-item" data-type="feat">
+                    <div class="log-header">
+                        <span class="log-date">2025-08-22</span>
+                        <h4 class="log-title">カレンダーカラーの双方向設定を実装</h4>
+                    </div>
+                </div>
+
+                <div class="log-item" data-type="refactor">
+                    <div class="log-header">
+                        <span class="log-date">2025-01-23</span>
+                        <h4 class="log-title">タスクとカレンダーの表示改善</h4>
+                    </div>
+                    <div class="log-body">
+                        <ul>
+                            <li>タスク詳細画面（タイトル/メモ/期日/完了）を実装。</li>
+                            <li>サブタスクの作成・編集・削除に対応（2階層まで）。</li>
+                            <li>Google Tasks APIの仕様に合わせ、<code>insert → move</code> の手順で正しい階層を維持。</li>
+                            <li>予定（Event）とタスク（ToDo）の概念を整理。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="log-item" data-type="fix">
+                    <div class="log-header">
+                        <span class="log-date">2025-07-09</span>
+                        <h4 class="log-title">Google認証とツール連携の安定化</h4>
+                    </div>
+                    <div class="log-body">
+                        <ul>
+                            <li>ログイン直後にGoogle Tasksのツールが使えない問題を解消。</li>
+                            <li>セッションIDの扱いを見直し、認証直後からツールが使えるように。</li>
+                            <li>Geminiなど他LLMプロバイダの会話履歴フォーマットにも対応。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="log-item" data-type="milestone">
+                    <div class="log-header">
+                        <span class="log-date">2025-07-07</span>
+                        <h4 class="log-title">マイルストーン達成</h4>
+                    </div>
+                    <div class="log-body">
+                        <ul>
+                            <li><b>UI/UXの大幅改善:</b> タスクのカードスタイル化、テーマカラー対応など。</li>
+                            <li><b>タスク詳細管理:</b> サブタスクを含めた完全なタスク編集機能を実装。</li>
+                            <li><b>マルチLLM対応:</b> OpenAI, Anthropic, Gemini, Groqの4大LLMに対応完了。</li>
+                            <li><b>認証基盤:</b> Google OAuth2.0による安全な認証と自動トークンリフレッシュを実装。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="log-toggle">
+                <a href="#" id="show-all-logs-link">すべての更新履歴を表示</a>
+            </div>
+            <div id="all-logs-container" style="display: none;">
+                <!-- ここに過去のログがリスト形式で入ります -->
             </div>
         </section>
 
