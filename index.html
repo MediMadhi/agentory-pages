@@ -60,7 +60,46 @@
         <section class="dev-log">
             <h2>開発ログ</h2>
             <div class="log-container">
-                <h3>主な開発の進捗</h3>
+                <h3>最近の大きな変更</h3>
+                <article class="log-entry">
+                    <h4>認証フローとAPIレスポンスの統一、そして安定化（2025/08/26）</h4>
+                    <ul>
+                        <li><b>Envelope形式に統一:</b> サーバーは <code>ok(data)</code>/<code>fail(...)</code>、クライアントは <code>extractData</code> で展開。</li>
+                        <li><b>HTTPクライアント導入:</b> Axiosベースの <code>httpClient</code> を追加。<code>Authorization</code>/<code>X-Session-ID</code>/<code>X-Request-Id</code> を自動付与。401は自動リフレッシュ → 1回再試行。</li>
+                        <li><b>認証フローの安定化:</b> <code>/auth/google</code> 応答の取りこぼしを解消（JWTペイロード/既存セッションなどのフォールバック）。設定画面のフローも <code>httpClient</code> に統一。</li>
+                        <li><b>取得の重複を軽減:</b> AI設定取得は in-flight 制御＋短期キャッシュで重複呼び出しを抑制。</li>
+                        <li><b>ベースURL解決の強化:</b> <code>extra.apiUrl</code> → <code>EXPO_PUBLIC_API_URL</code> → <code>backendUrl + /api</code> → <code>http://localhost:3000/api</code> の順で解決。</li>
+                    </ul>
+                    <p class="note">見えないところの大掃除が進み、これからの開発・調査がずっと楽になります。</p>
+                </article>
+                <article class="log-entry">
+                    <h4>タスクとカレンダーの表示まわりを整えました（2025/01/23）</h4>
+                    <ul>
+                        <li>タスク詳細画面を作り込み（タイトル/メモ/期日/完了）。</li>
+                        <li>サブタスクの作成・編集・削除に対応、2階層の構造も見やすく。</li>
+                        <li>Google Tasks APIの仕様に合わせ、<code>insert → move</code> 手順で正しい階層を維持。</li>
+                    </ul>
+                </article>
+                <article class="log-entry">
+                    <h4>予定とタスクの理解をそろえました（2025/01/23）</h4>
+                    <ul>
+                        <li><b>予定（Event）:</b> その時間に必ず行うもの（開始/終了がある）。</li>
+                        <li><b>タスク（ToDo）:</b> 期日までにやればよいもの（時間帯は任意）。</li>
+                        <li>タスクは必要に応じてカレンダーに落として時間を確保（時間ブロッキング）。</li>
+                    </ul>
+                </article>
+                <article class="log-entry">
+                    <h4>Google 認証・ツール連携の安定化（2025/07/09）</h4>
+                    <ul>
+                        <li>ログイン後にGoogle Tasksのツールが使えない問題を解消。</li>
+                        <li>セッションIDの扱いを見直し、ログイン直後からツールが使えるように。</li>
+                        <li>Gemini など他プロバイダの会話履歴フォーマットも整備。</li>
+                    </ul>
+                </article>
+                <div class="dev-log-header">
+                    <h3>過去の更新</h3>
+                    <a href="#" id="show-all-logs-link">すべての更新を表示</a>
+                </div>
                 <ul>
                     <li><b>UI/UXの大幅改善:</b> タスクのカードスタイル化、テーマカラー対応、完了タスクの視覚的区別など。</li>
                     <li><b>タスク詳細管理:</b> サブタスクを含めた完全なタスク編集機能（タイトル、メモ、期日）を実装。</li>
