@@ -147,6 +147,14 @@ section h2 {
     gap: 20px;
 }
 
+.screenshot-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background-color: #f7f7f7;
+}
+
 .screenshot-placeholder {
     background-color: #f7f7f7;
     border: 1px solid var(--border-color);
