@@ -108,16 +108,42 @@
 
                 <div class="log-item log-item-hidden">
                     <div class="log-header">
-                        <span class="log-date">2025-01-23</span>
-                        <h4 class="log-title">タスクとカレンダーの表示改善</h4>
+                        <span class="log-date">2025-07-17</span>
+                        <h4 class="log-title">タスク関連機能の動作確認</h4>
+                    </div>
+                </div>
+
+                <div class="log-item log-item-hidden">
+                    <div class="log-header">
+                        <span class="log-date">2025-07-16</span>
+                        <h4 class="log-title">タスク機能の強化</h4>
                     </div>
                     <div class="log-body">
                         <ul>
-                            <li>タスク詳細画面（タイトル/メモ/期日/完了）を実装。</li>
-                            <li>サブタスクの作成・編集・削除に対応（2階層まで）。</li>
-                            <li>Google Tasks APIの仕様に合わせ、<code>insert → move</code> の手順で正しい階層を維持。</li>
-                            <li>予定（Event）とタスク（ToDo）の概念を整理。</li>
+                            <li>タスク呼び出し関数を追加</li>
+                            <li>タスクの日時設定機能を追加</li>
                         </ul>
+                    </div>
+                </div>
+
+                <div class="log-item log-item-hidden">
+                    <div class="log-header">
+                        <span class="log-date">2025-07-15</span>
+                        <h4 class="log-title">タスクマネージャのUI実装</h4>
+                    </div>
+                </div>
+
+                <div class="log-item log-item-hidden">
+                    <div class="log-header">
+                        <span class="log-date">2025-07-14</span>
+                        <h4 class="log-title">UIと設定の連携を確認</h4>
+                    </div>
+                </div>
+
+                <div class="log-item log-item-hidden">
+                    <div class="log-header">
+                        <span class="log-date">2025-07-10</span>
+                        <h4 class="log-title">デフォルトUIの設計開始</h4>
                     </div>
                 </div>
 
@@ -131,7 +157,15 @@
                             <li>ログイン直後にGoogle Tasksのツールが使えない問題を解消。</li>
                             <li>セッションIDの扱いを見直し、認証直後からツールが使えるように。</li>
                             <li>Geminiなど他LLMプロバイダの会話履歴フォーマットにも対応。</li>
+                            <li>AI SettingsからのLLM切り替えとストリーミング応答を確認。</li>
                         </ul>
+                    </div>
+                </div>
+
+                <div class="log-item log-item-hidden">
+                    <div class="log-header">
+                        <span class="log-date">2025-07-08</span>
+                        <h4 class="log-title">AI設定画面とLLM切り替え機能</h4>
                     </div>
                 </div>
 
@@ -146,6 +180,50 @@
                             <li><b>タスク詳細管理:</b> サブタスクを含めた完全なタスク編集機能を実装。</li>
                             <li><b>マルチLLM対応:</b> OpenAI, Anthropic, Gemini, Groqの4大LLMに対応完了。</li>
                             <li><b>認証基盤:</b> Google OAuth2.0による安全な認証と自動トークンリフレッシュを実装。</li>
+                            <li>Groq/Geminiでのツール呼び出しの不安定性を確認。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="log-item log-item-hidden">
+                    <div class="log-header">
+                        <span class="log-date">2025-07-05</span>
+                        <h4 class="log-title">ストリーミングとツール連携の検証</h4>
+                    </div>
+                </div>
+
+                <div class="log-item log-item-hidden">
+                    <div class="log-header">
+                        <span class="log-date">2025-07-03</span>
+                        <h4 class="log-title">ツール呼び出し実装と初期セットアップ</h4>
+                    </div>
+                </div>
+
+                <div class="log-item log-item-hidden">
+                    <div class="log-header">
+                        <span class="log-date">2025-07-02</span>
+                        <h4 class="log-title">モノレポ化とデバッグ</h4>
+                    </div>
+                </div>
+
+                <div class="log-item log-item-hidden">
+                    <div class="log-header">
+                        <span class="log-date">2025-07-01</span>
+                        <h4 class="log-title">プロジェクトのモノレポ化を開始</h4>
+                    </div>
+                </div>
+
+                <div class="log-item log-item-hidden">
+                    <div class="log-header">
+                        <span class="log-date">2025-01-23</span>
+                        <h4 class="log-title">タスクとカレンダーの表示改善</h4>
+                    </div>
+                    <div class="log-body">
+                        <ul>
+                            <li>タスク詳細画面（タイトル/メモ/期日/完了）を実装。</li>
+                            <li>サブタスクの作成・編集・削除に対応（2階層まで）。</li>
+                            <li>Google Tasks APIの仕様に合わせ、<code>insert → move</code> の手順で正しい階層を維持。</li>
+                            <li>予定（Event）とタスク（ToDo）の概念を整理。</li>
                         </ul>
                     </div>
                 </div>
