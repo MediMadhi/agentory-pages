@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>プライバシーポリシー | Agentory</title>
+    <style>
+      body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans JP', sans-serif; line-height: 1.7; color: #222; margin: 0; }
+      header { background: #0f172a; color: #fff; padding: 32px 16px; }
+      header h1 { margin: 0; font-size: 20px; }
+      main { max-width: 860px; margin: 24px auto; padding: 0 16px; }
+      h2 { margin-top: 28px; font-size: 18px; }
+      a { color: #2563eb; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      footer { margin: 40px 0; color: #555; font-size: 14px; }
+      .note { background: #f8fafc; border: 1px solid #e2e8f0; padding: 12px; border-radius: 8px; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>プライバシーポリシー（暫定版）</h1>
+    </header>
+    <main>
+      <p>最終更新日: <span id="updated">YYYY-MM-DD</span></p>
+
+      <p>本ポリシーは、Agentory（以下「当社」）が提供するアプリケーションにおける個人情報および関連データの取り扱いについて定めるものです。</p>
+
+      <h2>収集する情報</h2>
+      <ul>
+        <li>Google アカウント情報（メールアドレス、プロフィール）</li>
+        <li>Google Tasks/Calendar データ（同期のために必要な範囲）</li>
+        <li>アプリの利用状況（クラッシュレポート、匿名化された分析情報）</li>
+      </ul>
+
+      <h2>利用目的</h2>
+      <ul>
+        <li>認証・アカウント管理</li>
+        <li>タスク/予定の同期・作成・更新</li>
+        <li>品質向上（障害解析、機能改善）</li>
+      </ul>
+
+      <h2>第三者提供</h2>
+      <p>法令等に基づく場合を除き、本人の同意なく第三者へ提供しません。</p>
+
+      <h2>データの保存と保護</h2>
+      <ul>
+        <li>リフレッシュトークン等の機密情報は暗号化して保存します。</li>
+        <li>ログやレポートには機密情報を記録しません（マスキングを実施）。</li>
+      </ul>
+
+      <h2>データの保持期間</h2>
+      <p>アカウント削除またはユーザーからの削除依頼時に速やかに削除します。</p>
+
+      <h2>ユーザーの権利</h2>
+      <p>データの閲覧、訂正、削除を要求できます。サポート窓口へご連絡ください。</p>
+
+      <h2>連絡先</h2>
+      <p>メール: <a href="mailto:support@example.com">support@example.com</a>（置換してください）</p>
+
+      <div class="note">
+        <p>注意: 本ページは暫定版です。最終公開時に運営主体名、連絡先、更新日を正しい情報へ置換してください。</p>
+      </div>
+
+      <footer>
+        <p>© Agentory</p>
+      </footer>
+    </main>
+    <script>
+      // 日付が未設定なら今日を初期表示
+      const el = document.getElementById('updated');
+      if (el && el.textContent === 'YYYY-MM-DD') {
+        const d = new Date();
+        const pad = n => String(n).padStart(2, '0');
+        el.textContent = `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+      }
+    </script>
+  </body>
+</html>
+
