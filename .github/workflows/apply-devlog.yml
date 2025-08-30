@@ -1,0 +1,53 @@
+name: Apply devlog from agentory
+
+on:
+  repository_dispatch:
+    types: [update-devlog]
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout pages repo
+        uses: actions/checkout@v4
+
+      - name: Decode payload
+        id: decode
+        shell: bash
+        run: |
+          echo "${{ github.event.client_payload.snippet_b64 }}" | base64 -d > devlog.html || echo "${{ github.event.client_payload.snippet_b64 }}" | base64 --decode > devlog.html
+          echo "target_file=${{ github.event.client_payload.target_file || 'index.html' }}" >> $GITHUB_OUTPUT
+
+      - name: Replace devlog section
+        shell: bash
+        run: |
+          TARGET="${{ steps.decode.outputs.target_file }}"
+          START="<!-- DEVLOG:START -->"
+          END="<!-- DEVLOG:END -->"
+          if [[ ! -f "$TARGET" ]]; then
+            echo "Target HTML not found: $TARGET" >&2
+            exit 1
+          fi
+          SNIPPET_CONTENT=$(cat devlog.html)
+          # awkでSTARTとENDの間をSNIPPETに置換
+          awk -v start="$START" -v end="$END" -v repl="$SNIPPET_CONTENT" '
+            BEGIN{inblock=0}
+            {
+              if ($0 ~ start) { print; print repl; inblock=1; next }
+              if ($0 ~ end) { inblock=0 }
+              if (!inblock) print
+            }
+          ' "$TARGET" > "$TARGET.tmp" && mv "$TARGET.tmp" "$TARGET"
+
+      - name: Commit and push
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore(devlog): update from ${{ github.event.client_payload.source_repo }}@${{ github.event.client_payload.source_sha }}" || echo "No changes"
+          git push
+
